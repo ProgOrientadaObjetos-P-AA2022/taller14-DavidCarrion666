@@ -12,15 +12,18 @@ public class Calificaciones {
 
     private String nombre;
     private double cal1;
+    private String apellido;
     private double cal2;
     private double cal3;
     private double promedio;
 
-    public Calificaciones(String n, double c1, double c2, double c3) {
-        nombre = n;
-        cal1 = c1;
-        cal2 = c2;
-        cal3 = c3;
+    public Calificaciones(String nomb, String apelli, double nota1, double nota2,
+            double nota3) {
+        nombre = nomb;
+        apellido = apelli;
+        cal1 = nota1;
+        cal2 = nota2;
+        cal3 = nota3;
     }
 
     public String obtenerNombre() {

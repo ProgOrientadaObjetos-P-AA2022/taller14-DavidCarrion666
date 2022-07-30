@@ -49,8 +49,8 @@ public class Problema02 {
             }
 
         } while (bandera);*/
-        for (int i = 0; i < c.obtenerDataCalificaciones().size(); i++) {
-            System.out.printf("%s", c.obtenerDataCalificaciones().get(i));
+         for (int i = 0; i < c.obtenerDataCalificaciones().size(); i++) {
+            System.out.printf("%s\n", c.obtenerDataCalificaciones().get(i));
         }
 
     }

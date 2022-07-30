@@ -23,7 +23,7 @@ public class Enlace {
 
         try {
             // db parameters  
-            String url = "jdbc:sqlite:bd/base001.bd";
+            String url = "jdbc:sqlite:bd/base001.base";
             // create a connection to the database  
             conn = DriverManager.getConnection(url);
             // System.out.println(conn.isClosed());
@@ -70,12 +70,11 @@ public class Enlace {
 
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
-                Calificaciones miCalificaciones = new Calificaciones(
-                        rs.getString("nombre"),
-                        rs.getDouble("estudiante1"),
-                        rs.getDouble("estudiante2"),
-                        rs.getDouble("estudiante3"));
-                lista.add(miCalificaciones);
+                Calificaciones miC = new Calificaciones(rs.getString("nombre"),
+                        rs.getString("apellido"), rs.getDouble("calificacion1"),
+                        rs.getDouble("calificacion2"), rs.getDouble("calificacion3"));
+                miC.calcularPromedio();
+                lista.add(miC);
             }
 
             obtenerConexion().close();
